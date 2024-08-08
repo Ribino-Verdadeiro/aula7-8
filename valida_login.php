@@ -3,13 +3,14 @@
 <body>
 
     <?php
+
 // Aqui define a variavel como false
     $usuario_autenticator=false;
     // Aqui eu crio um array com o email e senha dos usuarios
         $usuarios_app=array(
 
             array(
-            'email' => 'joaoehgay@gaymail.gay',
+            'email' => 'joaoehgay@gaymail.gay', 
             'password' => 'peidodevelha69'
         
             ),
@@ -30,8 +31,10 @@
     // caso a variavel seja == true entao ele diz que o usuario entrou com sucesso
     if ($usuario_autenticator) {
         echo 'Você Entrou com sucesso.';
+        $_SESSION['autenticator'] = 'SIM';
     }else{ // caso a variavel nao seja true, ele diz que o email e senha nao correspondem
-        echo 'Email ou Senha nao correspondem';
+        header('Location: index.php?login=erro');
+        $_SESSION['autenticator'] = 'NAO';
     }
 
     ?>

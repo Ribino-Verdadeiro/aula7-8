@@ -1,4 +1,9 @@
-<html>
+<?php 
+include 'funções.php';
+startSession()
+?>
+
+<!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
     <title>App Help Desk</title>
