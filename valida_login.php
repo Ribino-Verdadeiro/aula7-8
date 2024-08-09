@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 
 <body>
@@ -30,11 +33,14 @@
     }
     // caso a variavel seja == true entao ele diz que o usuario entrou com sucesso
     if ($usuario_autenticator) {
-        echo 'Você Entrou com sucesso.';
+        
         $_SESSION['autenticator'] = 'SIM';
+        header('Location: home.php');
+        
     }else{ // caso a variavel nao seja true, ele diz que o email e senha nao correspondem
-        header('Location: index.php?login=erro');
         $_SESSION['autenticator'] = 'NAO';
+        header('Location: index.php?login=erro');
+        
     }
 
     ?>

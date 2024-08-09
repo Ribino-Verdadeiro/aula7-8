@@ -1,6 +1,8 @@
 <?php 
+session_start();
 include 'funções.php';
-startSession()
+startSession();
+
 ?>
 
 <!DOCTYPE html>

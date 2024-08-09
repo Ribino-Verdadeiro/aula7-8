@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
@@ -16,12 +20,10 @@
 
   <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        App Help Desk
-      </a>
-    </nav>
+      <?php
+      include 'funções.php'; 
+      cabeçario() ?>
+
 
     <div class="container">    
       <div class="row">
@@ -42,12 +44,11 @@
                 </div>                
 
                 <?php 
-                include 'funções.php';
                 testelogin(); 
                 protegerPaginas();
                 ?>
                               
-                <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
+               <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
                 
               </form>
 
