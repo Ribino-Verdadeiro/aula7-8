@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@ session_start()
     <?php
 
 // Aqui define a variavel como false
-    $usuario_autenticator=false;
+    $usuario_autenticator = false;
     // Aqui eu crio um array com o email e senha dos usuarios
         $usuarios_app=array(
 
@@ -27,10 +27,11 @@ session_start()
         // aqui eu crio uma repetição aonde vai verificar se o email e password que o usuario digitou é igual no nossos arrays
     foreach ($usuarios_app as $user) {
         if ($user['email'] == $_POST['email'] && $user['password'] == $_POST['password']) {
-            // caso seja igual entao ele define essa variavel como true
-            $usuario_autenticator=true;
+
+           $usuario_autenticator = true; // caso seja igual entao ele define essa variavel como true
         }
     }
+
     // caso a variavel seja == true entao ele diz que o usuario entrou com sucesso
     if ($usuario_autenticator) {
         

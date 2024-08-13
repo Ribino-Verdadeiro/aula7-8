@@ -9,27 +9,22 @@
 <?php } ?> 
 
 
-<?php function startSession() {
-    include('valida_login.php');
-    if(!isset($_SESSION['autenticador']) || $_SESSION['autenticador'] != 'SIM') {
-        header('Location: index.php?login=erro2');
-      }    
-} ?>
+
 
 
 <?php function protegerPaginas() { ?>
     <?php
         if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
              <div class='text-danger'>
-                 Faça login antes de acessar minhas paginas, safado!
+                 Faça login antes de acessar minhas paginas.
             </div>
     <?php }?>
 <?php } ?> 
 
-<?php function cabeçario() { ?>
 
-             
-    <div class="container" style="background-color: pink;" >
+<?php function cabeçario() { ?>
+  
+    <div class="container cabecalho"  >
 
         <div class="row">
 
@@ -59,7 +54,9 @@
                     <img src="carrinho.png" width="30" height="30">
                   </div>
                   <div class="col-sm">
+                    <a href=>
                     <img src="menu.png" width="30" height="30">
+                    </a>
                   </div>
                 </div>
               </div>

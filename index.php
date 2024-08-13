@@ -5,10 +5,10 @@ session_start();
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Help Desk</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
       .card-login {
         padding: 30px 0 0 0;
@@ -21,8 +21,9 @@ session_start();
   <body>
 
       <?php
-      include 'funções.php'; 
-      cabeçario() ?>
+      include_once 'funções.php'; 
+      cabeçario();
+       ?>
 
 
     <div class="container">    

@@ -1,0 +1,5 @@
+.cabecalho, .container {
+    width: 100%;
+    background-color: pink;  
+    background-size: cover;
+}
