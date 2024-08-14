@@ -24,7 +24,7 @@
 
 <?php function cabeçario() { ?>
   
-    <div class="container cabecalho"  >
+    <div class="container cabecalho">
 
         <div class="row">
 
