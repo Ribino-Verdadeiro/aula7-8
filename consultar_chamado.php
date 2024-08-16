@@ -2,6 +2,22 @@
   require_once "V.php";
 ?>
 
+<?php 
+
+  $chamados=array(); // aqui criamos uma variavel "chamados" que é um array VAZIO
+
+  $arquivo = fopen('arquivo.txt', 'r'); // aqui abrimos o arquivo.txt e lemos ele "r"
+
+  while(!feof($arquivo)){ // aqui criamos um laço de repetição aonde vai ler até o final da variavel $arquivo
+
+    $registro=fgets($arquivo); // aqui criamos uma outra variavel $registro para armazenar o que o fgets ler do $arquivo, vale lembrar que o fgets lê linha por linha
+    $chamados[]=$registro; // aqui falamos que vamos salvar a variavel $registro no array $chamados
+
+  }
+
+?>
+
+
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
@@ -37,24 +53,30 @@
             </div>
             
             <div class="card-body">
-              
+
+              <?php foreach($chamados as $chamado) { // aqui criamos um laço de repetição para a nossa variavel $chamados, colocamos um apelido que é o chamado para cada item da variavel $chamados?>
+
+                <?php
+                  $chamado_dados=explode('#', $chamado); // aqui dizemos que cada item do $chamado está separado com #
+
+                  if(count($chamado_dados) < 3 ){ // aqui caso a variavel $chamado_dados ter menos do que 3 itens entao apenas vai continuar e nao dar erro
+                    continue;
+                  }
+                    // aqui para baixo apenas colocamos o resultado do $chamado_dados em seus respectivos lugares, ou seja, o numero 0 do array é o titulo, entao colocamos para mostrar la e assim em diante
+                ?>
+
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
+
+                  <h5 class="card-title"> <?=$chamado_dados[0]?> </h5> 
+                  <h6 class="card-subtitle mb-2 text-muted"> <?=$chamado_dados[1]?> </h6>
+                  <p class="card-text"> <?=$chamado_dados[2]?> </p>
 
                 </div>
               </div>
 
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
+              <?php } ?>
 
-                </div>
-              </div>
 
               <div class="row mt-5">
                 <div class="col-6">
@@ -67,8 +89,9 @@
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  
+</body>
 </html>
